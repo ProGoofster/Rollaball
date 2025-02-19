@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using System;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private int count;
     public GameObject winTextObject;
     public GameObject PickUpParent;
+    public GameObject collisionSound;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (count >= PickUpParent.transform.childCount)
         {
             winTextObject.SetActive(true);
+            winTextObject.GetComponent<AudioSource>().Play();
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
         }
     }
@@ -66,6 +69,10 @@ public class PlayerController : MonoBehaviour
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
             winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        }
+        if (collision.gameObject.CompareTag("Wall")) {
+            Debug.Log("wall collision");
+            collisionSound.gameObject.GetComponent<AudioSource>().Play();
         }
     }
 }
