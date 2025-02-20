@@ -734,6 +734,7 @@ MonoBehaviour:
   collisionSound: {fileID: 1562315675}
   explosionFX: {fileID: 9163842254569548763, guid: fdb1ffad1b27547ceb1e6850752e6b86, type: 3}
   pickupFX: {fileID: 953572193856364788, guid: 9c8d24fb98d50894fa5d3339b626dfcf, type: 3}
+  winFX: {fileID: 8610519221509298819, guid: 3451c1251b8c73fc99bd34cc88e76dc5, type: 3}
 --- !u!114 &377873799
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject collisionSound;
     public GameObject explosionFX;
     public GameObject pickupFX;
+    //public GameObject winFX;
 
     void Start()
     {
@@ -46,6 +47,8 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true);
             winTextObject.GetComponent<AudioSource>().Play();
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+
+            //Instantiate(winFX, transform.position, Quaternion.identity);
         }
     }
 
